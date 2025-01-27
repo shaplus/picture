@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .nag {
+            background-color: black;
+            color: white;
+            border-width: 5px;
+            /* position: fixed; */
+            margin-top: 0;
+            width: 100%;
+            height: 40px;
+            font-size: 30px;
+            margin:0;
+            padding:0;
+        }
+        .nag-font {
+            color: white;
+            line-height: 10px;
+            text-decoration: none;
+            /* border: 3px solid black; */
+        }
+        .container {
+            text-align:center;
+        }
+        .pic {
+            width: 50%;
+        }
+        .backTop {
+            /* 固定定位 */
+            position: fixed;
+            bottom: 150px;
+            right: 0;
+            margin-right: 20px;
+            z-index: 999;
+            /* 回到顶部样式 */
+            width: 35px;
+            height: 35px;
+            background-color: deepskyblue;
+            /* 字体在元素中水平垂直居中 */
+            line-height: 35px;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            /* 设置圆角 */
+            border-radius: 50%;
+            /* 设置过渡效果 */
+            transition: all linear 0.5s;
+            cursor: pointer;
+            /* 隐藏 透明度为0 */
+            opacity: 50;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="nag">
+        <a href="./index.html" class="nag-font">both</a>
+        <a href="./sha.html" class="nag-font">sha</a>
+        <a href="./daiiray.html" class="nag-font">daiiray</a>
+        <a href="./zhuo.html" class="nag-font">zhuo</a>
+        <a href="./yisir.html" class="nag-font">yisir</a>
+    </nav>
+    <div class="container">
+        <h2>both001</h2>
+        <img src="./pic/daiiray/daiiray (1).jpg" alt="" class="pic">
+        <h2>both002</h2>
+        <img src="./pic/daiiray/daiiray (2).jpg" alt="" class="pic">
+        <h2>both003</h2>
+        <img src="./pic/daiiray/daiiray (3).jpg" alt="" class="pic">
+        <h2>both004</h2>
+        <img src="./pic/daiiray/daiiray (4).jpg" alt="" class="pic">
+        <h2>both005</h2>
+        <img src="./pic/daiiray/daiiray (5).jpg" alt="" class="pic">
+        <h2>both006</h2>
+        <img src="./pic/daiiray/daiiray (6).jpg" alt="" class="pic">
+        <h2>both007</h2>
+        <img src="./pic/daiiray/daiiray (7).jpg" alt="" class="pic">
+        <h2>both008</h2>
+        <img src="./pic/daiiray/daiiray (8).jpg" alt="" class="pic">
+        <h2>both009</h2>
+        <img src="./pic/daiiray/daiiray (9).jpg" alt="" class="pic">
+        <h2>both010</h2>
+        <img src="./pic/daiiray/daiiray (10).jpg" alt="" class="pic">
+        <h2>both011</h2>
+        <img src="./pic/daiiray/daiiray (11).jpg" alt="" class="pic">
+        <h2>both012</h2>
+        <img src="./pic/daiiray/daiiray (12).jpg" alt="" class="pic">
+        <h2>both013</h2>
+        <img src="./pic/daiiray/daiiray (13).jpg" alt="" class="pic">
+    </div>
+    <div class="backTop" id="backTop">Top</div>
+    <script>
+        /* 
+        需求：当页面滚动大于300像素，就显示回到顶部按钮
+        */
+        // 获取回到顶部元素
+        const backTop = document.querySelector('#backTop')
+        // L2 事件监听
+        // 给页面添加 滚动事件
+        window.addEventListener('scroll', function () {
+          // 检测页面滚动的头部距离属性
+          const n = document.documentElement.scrollTop
+          backTop.style.opacity = n >= 300 ? 1 : 0
+        })
+        // 需求：点击返回按钮，页面会返回顶部
+        // 给回到顶部元素添加 点击事件
+        backTop.addEventListener('click',function () {
+          document.documentElement.scrollTop = 0
+        })
+      </script>
+</body>
+</html>
